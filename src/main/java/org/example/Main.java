@@ -91,9 +91,8 @@ public class Main {
         }
 
         static boolean isRomanNumeral(String input) {
-            String validRomanNumerals = "IVXLCD";
             for (char c : input.toCharArray()) {
-                if (validRomanNumerals.indexOf(c) == -1) {
+                if (c != 'I' && c != 'V' && c != 'X' && c != 'L' && c != 'C') {
                     return false;
                 }
             }
@@ -129,8 +128,8 @@ public class Main {
                 throw new UnsupportedOperationException("В римской системе нет отрицательных чисел");
             }
 
-            String[] romanSymbols = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-            int[] arabicValues = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+            String[] romanSymbols = {"X", "IX", "V", "IV", "I"};
+            int[] arabicValues = {10, 9, 5, 4, 1};
             StringBuilder result = new StringBuilder();
             int i = 0;
 
